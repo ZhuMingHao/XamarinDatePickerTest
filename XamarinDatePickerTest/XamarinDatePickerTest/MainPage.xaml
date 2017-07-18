@@ -20,5 +20,16 @@
                 </sys:DateTime>
             </DatePicker.MinimumDate>
         </DatePicker>
+
+        <DatePicker x:Name="TestDatePicker" VerticalOptions="CenterAndExpand" Date="{x:Static sys:DateTime.Now}" DateSelected="TestDatePicker_DateSelected">
+            <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+            <DatePicker.MinimumDate>
+                <sys:DateTime x:FactoryMethod="Parse">
+                    <x:Arguments>
+                        <x:String>Jan 1 2000</x:String>
+                    </x:Arguments>
+                </sys:DateTime>
+            </DatePicker.MinimumDate>
+        </DatePicker>
     </StackLayout>
 </ContentPage>

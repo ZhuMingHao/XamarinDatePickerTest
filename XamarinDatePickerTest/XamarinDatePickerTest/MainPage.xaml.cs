@@ -12,7 +12,13 @@ namespace XamarinDatePickerTest
         public MainPage()
         {
             InitializeComponent();
-            
+
+        }
+
+        private void TestDatePicker_DateSelected(object sender, DateChangedEventArgs e)
+        {
+            var viewmode = this.BindingContext as ViewModel.MainPageViewModel;
+            viewmode.Datetime = e.NewDate;
         }
     }
 }
