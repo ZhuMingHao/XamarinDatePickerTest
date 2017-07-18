@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XamarinDatePickerTest"
+             x:Class="XamarinDatePickerTest.MainPage"
+             xmlns:ViewMode ="clr-namespace:XamarinDatePickerTest.ViewModel"
+             xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+             >
+   <ContentPage.BindingContext>
+        <ViewMode:MainPageViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout>
+        <DatePicker VerticalOptions="CenterAndExpand" Date="{Binding Datetime}">
+            <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+            <DatePicker.MinimumDate>
+                <sys:DateTime x:FactoryMethod="Parse">
+                    <x:Arguments>
+                        <x:String>Jan 1 2000</x:String>
+                    </x:Arguments>
+                </sys:DateTime>
+            </DatePicker.MinimumDate>
+        </DatePicker>
+    </StackLayout>
+</ContentPage>
